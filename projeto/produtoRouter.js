@@ -5,13 +5,13 @@ const express = require('express');
 const app = express();
 
 var admin = require("firebase-admin");
-var serviceAccount = require("./serviceAccount.json");
+var serviceAccount = require("./serviceAccountKey.json");
+
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://aplica-3d25b-default-rtdb.firebaseio.com"
-});
-
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://aplica-3d25b-default-rtdb.firebaseio.com"
+  });
 const db = admin.database();
 
 
