@@ -49,6 +49,9 @@ app.get('/home', (req, res) => {
 const livrosRouter = require("./livrosRouter");
 app.use("/Agricultor", livrosRouter);
 
+const produtoRouter = require("./produtoRouter");
+app.use("/Produto", produtoRouter);
+
 
 
 
