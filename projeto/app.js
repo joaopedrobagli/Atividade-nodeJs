@@ -52,6 +52,19 @@ app.use("/Agricultor", livrosRouter);
 const produtoRouter = require("./produtoRouter");
 app.use("/Produto", produtoRouter);
 
+const propriedadeRouter = require("./propriedadeRouter");
+app.use("/Propriedade", propriedadeRouter);
+
+const maquinaRouter = require("./maquinaRouter");
+app.use("/maquina", maquinaRouter);
+
+const culturaRouter = require("./culturaRouter");
+app.use("/cultura", culturaRouter);
+
+const talhoesRouter = require("./talhoesRouter");
+app.use("/talhoes", talhoesRouterRouter);
+
+
 
 
 
