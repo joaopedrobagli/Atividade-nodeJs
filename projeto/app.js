@@ -62,7 +62,7 @@ const culturaRouter = require("./culturaRouter");
 app.use("/cultura", culturaRouter);
 
 const talhoesRouter = require("./talhoesRouter");
-app.use("/talhoes", talhoesRouterRouter);
+app.use("/talhoes", talhoesRouter);
 
 
 

@@ -8,11 +8,6 @@ var admin = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
 
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://aplica-3d25b-default-rtdb.firebaseio.com"
-  });
-const db = admin.database();
 
 
 app.get('/', (req, res) => {
