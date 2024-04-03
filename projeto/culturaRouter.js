@@ -7,7 +7,7 @@ const app = express();
 var admin = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
 
-
+const db = admin.database();
 
 
 app.get('/', (req, res) => {
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/novo', (req, res) => {
+app.get('/nova', (req, res) => {
     fs.readFile('src/cabecalho.html', (e, cabecalho) => {
         fs.readFile('src/rodape.html', (e, rodape) => {
             fs.readFile('src/cultura/nova_cultura.html', (e, dados) => {
@@ -36,7 +36,7 @@ app.get('/novo', (req, res) => {
 });
 
 
-app.post('/novo', urlencodedParser, (req, res) => {
+app.post('/nova', urlencodedParser, (req, res) => {
     fs.readFile('src/cabecalho.html', (e, cabecalho) => {
         fs.readFile('src/rodape.html', (e, rodape) => {
             fs.readFile('src/cultura/cultura.html', (e, dados) => {
@@ -45,7 +45,7 @@ app.post('/novo', urlencodedParser, (req, res) => {
                     const doccultura = db.ref("cultura").push();
                     const cultura = {
                         nome: req.body.nome,
-                        tempo: req.body.tempo,
+                        tempo: req.body.tempo
 
                     };
                     doccultura.set(cultura);

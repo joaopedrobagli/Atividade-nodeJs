@@ -6,6 +6,7 @@ const app = express();
 
 var admin = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
+const db = admin.database();
 
 
 
@@ -45,7 +46,7 @@ app.post('/novo', urlencodedParser, (req, res) => {
                     const docmaquina = db.ref("maquina").push();
                     const maquina = {
                         marca: req.body.marca,
-                        modelo: req.body.tempo,
+                        modelo: req.body.modelo,
                         placa: req.body.placa
 
 

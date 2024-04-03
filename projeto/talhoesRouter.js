@@ -6,15 +6,14 @@ const app = express();
 
 var admin = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
-
-
-
 const db = admin.database();
 
 // Rota da página que exibe os livros registrados no banco de dados
 app.get('/', (req, res) => {
     fs.readFile('src/cabecalho.html', (e, cabecalho) => {
         fs.readFile('src/rodape.html', (e, rodape) => {
+          
+
             fs.readFile('src/talhoes/talhoes.html', (e, dados) => {
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 res.write(cabecalho + dados + rodape);
