@@ -119,7 +119,7 @@ app.get('/excluir/:id', (req, res) => {
         fs.readFile('src/rodape.html', (e, rodape) => {
             fs.readFile('src/propriedade/excluir_propriedade.html', (e, dados) => {
                 let id = req.params.id;
-                const docLivro = db.ref("propriedade/"+id);
+                const docPropriedade = db.ref("propriedade/"+id);
                 docPropriedade.once("value", function(snapshot){
                     let nome = snapshot.val().nome;
                     let longitude = snapshot.val().longitude;
