@@ -51,7 +51,7 @@ app.post('/novo', urlencodedParser, (req, res) => {
                     const docPropriedade = db.ref("propriedade").push();
                     const propriedade = {
                         nome: req.body.nome,
-                        longitute: req.body.longitude,
+                        longitude: req.body.longitude,
                         latitude: req.body.latitude,
                         cidade: req.body.cidade
 
